@@ -7,7 +7,7 @@ from PIL import Image
 model_temp = None
 
 # Construct the raw GitHub URL
-github_raw_url = "https://github.com/JacksonDivakarProjects/Cat-and-Dog-Classification/raw/refs/heads/main/Final%20Model.h5"
+github_raw_url = "https://github.com/JacksonDivakarProjects/Face-Emotion-Classification/raw/refs/heads/main/Face%20Emotion%20Classification.h5"
 
 try:
     # Download the pickle file content using requests
@@ -15,7 +15,7 @@ try:
 
     if response.status_code == 200:
         # Load the data from the pickle file
-        model_temp = pk.loads(response.content)
+        model_temp = response.content
     else:
         st.error(f"Failed to retrieve pickle file. Status code: {response.status_code}")
 except Exception as e:
